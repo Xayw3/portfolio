@@ -44,7 +44,7 @@ const Footer = () => {
 
   return (
     <footer className="footer">
-      <a className="footer__logo" href={logoLink}>Logo</a>
+      <a className="footer__logo" href={logoLink}>Edgars Kapilinskis</a>
       <ul className="footer-list">
         {
           links.map(({ title, link }) => (
