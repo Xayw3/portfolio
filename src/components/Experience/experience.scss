@@ -1,0 +1,84 @@
+@import '../../assets/styles/vars.scss';
+
+.experience__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.experience__wrapper {
+  background-color: $bg-color-variant;
+  padding: 2.4rem 5rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  transition: $transition;
+
+  &:hover {
+    background-color: transparent;
+    border-color: $primary-color-variant;
+    cursor: default;
+  }
+
+  & h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: $primary-color;
+  }
+}
+
+.experience__details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.experience__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 2rem;
+}
+
+.experience__details_icon {
+  color: $primary-color;
+}
+
+// Responsive
+
+// 1300px
+
+@media screen and (max-width: 1400px) {
+  .experience__wrapper {
+    padding: 2.4rem 2rem;
+  }
+}
+
+// Tablets
+
+@media screen and (max-width: 1024px) {
+  .experience__container {
+    grid-template-columns: 1fr;
+  }
+
+  .experience__wrapper {
+    width: 80%;
+    padding: 2rem;
+    margin: 0 auto;
+  }
+
+  .experience__content {
+    padding: 1rem;
+  }
+}
+
+// Mobile
+
+@media screen and (max-width: 600px) {
+  .experience__container {
+    gap: 1rem;
+  }
+
+  .experience__wrapper {
+    width: 100%;
+    padding: 2rem 1rem;
+  }
+}
