@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import HeaderButtons from './HeaderButton';
 import './header.scss';
-import ME from '../../assets/images/me.png';
+import ME from '../../assets/images/me.webp';
 import HeaderSocials from './HeaderSocials';
 
 const Header = () => {
