@@ -4,7 +4,7 @@
 import { motion } from 'framer-motion';
 import HeaderButtons from './HeaderButton';
 import './header.scss';
-import ME from '../../assets/images/me.jpg';
+import ME from '../../assets/images/me.webp';
 import HeaderSocials from './HeaderSocials';
 import { heroImageAnimation, letterAnimation, socialsAnimation } from '../../animation/animation';
 
