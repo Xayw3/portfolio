@@ -1,10 +1,12 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
+/* eslint-disable jsx-a11y/anchor-has-content */
 /* eslint-disable react/no-unescaped-entities */
 import { motion } from 'framer-motion';
 import HeaderButtons from './HeaderButton';
 import './header.scss';
 import ME from '../../assets/images/me.jpg';
 import HeaderSocials from './HeaderSocials';
-import { letterAnimation, socialsAnimation } from '../../animation/animation';
+import { heroImageAnimation, letterAnimation, socialsAnimation } from '../../animation/animation';
 
 const Header = () => {
   const heroTitle = "Hello I'm Edgars Kapilinskis Frontend Developer".split('');
@@ -23,15 +25,17 @@ const Header = () => {
             </motion.h1>
             <HeaderButtons />
           </div>
-          <div className="header__content-left">
+          <motion.div className="header__content-left" variants={heroImageAnimation}>
             <div className="header__me">
               <div className="header__me-image">
                 <img src={ME} alt="me" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <a href="#about" className="scroll-down">Scroll Down</a>
+        <div className="scroll">
+          <a href="#about" className="scroll-down">Scroll Down</a>
+        </div>
         <HeaderSocials />
       </motion.div>
     </motion.header>

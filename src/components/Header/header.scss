@@ -120,14 +120,60 @@ header {
 
 @media screen and (max-width: 600px) {
   header {
-    height: max-content;
+    height: 100vh;
+    padding-top: 100px;
   }
 
   .header__socials {
     display: none;
   }
+
+  .scroll {
+    position: relative;
+  }
   
+  .scroll-down, .scroll-down::before {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -156px;
+  }
+
   .scroll-down {
-    display: none;
+    color: transparent;
+    width: 40px;
+    height: 70px;
+    border: 2px solid $white;
+    border-radius: 25px;
+
+    &:hover {
+      color: transparent;
+    }
+
+    &::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background-color: $white;
+      margin-left: -4px;
+      top: 15px;
+      border-radius: 50%;
+      animation: 1.5s scroll cubic-bezier(.65, -.55, .25, 1.5) infinite;
+    }
+  }
+
+  @keyframes scroll {
+    0% {
+      opacity: 0;
+      transform: translateY(0) scale(.5);
+    }
+    10% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(30px) scale(.5);
+    }
   }
 }
