@@ -6,8 +6,12 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(false);
-  }, [loading]);
+    if (document.readyState === 'loading') {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, []);
 
   return (
     <>
