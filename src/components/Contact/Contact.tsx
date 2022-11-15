@@ -1,26 +1,11 @@
 import './contact.scss';
 import { MdOutlineEmail } from 'react-icons/md';
+import { motion } from 'framer-motion';
 import { BsTelegram, BsWhatsapp } from 'react-icons/bs';
-import { useRef } from 'react';
-import emailjs from 'emailjs-com';
-
-const serviceId = process.env.REACT_APP_SERVICE_ID;
-const templateId = process.env.REACT_APP_TEMPLATE_ID;
-const publicKey = process.env.REACT_APP_PUBLIC_KEY;
+import Form from '../Form/Form';
+import { contactCardsAnimation, titleAnimation } from '../../animation/animation';
 
 const Contact = () => {
-  const form = useRef<null | HTMLFormElement>(null);
-
-  const sendEmail = (e: HTMLFormElement | any) => {
-    e.preventDefault();
-
-    if (form.current) {
-      emailjs.sendForm(`${serviceId}`, `${templateId}`, form.current, `${publicKey}`);
-    }
-
-    e.target.reset();
-  };
-
   const contacts = [
     {
       icon: <MdOutlineEmail className="contact__option_icon" />,
@@ -43,32 +28,27 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact">
-      <h5>Get In Touch</h5>
-      <h2>Contact Me</h2>
+    <motion.section id="contact" initial="hidden" whileInView="visible" viewport={{ amount: 0.3, once: true }}>
+      <motion.h5 variants={titleAnimation}>Get In Touch</motion.h5>
+      <motion.h2 variants={titleAnimation}>Contact Me</motion.h2>
       <div className="container contact__container">
         <div className="contact__options">
           {
             contacts.map(({
               icon, title, link, text,
-            }) => (
-              <article key={Math.random()} className="contact__option">
+            }, id) => (
+              <motion.article key={Math.random()} className="contact__option" custom={id} variants={contactCardsAnimation}>
                 {icon}
                 <h4>{title}</h4>
                 <h5>{text}</h5>
                 <a className="contact__option_link" href={link} target="_blank" rel="noreferrer">Send a message</a>
-              </article>
+              </motion.article>
             ))
           }
         </div>
-        <form className="contact__form" ref={form} onSubmit={sendEmail}>
-          <input className="contact__input" type="text" name="name" placeholder="Your Full Name" required />
-          <input className="contact__input" type="email" name="email" placeholder="Your Email" required />
-          <textarea className="contact__input" rows={7} name="message" placeholder="Your Message" required />
-          <button type="submit" className="btn btn-primary">Send Message</button>
-        </form>
+        <Form />
       </div>
-    </section>
+    </motion.section>
   );
 };
 

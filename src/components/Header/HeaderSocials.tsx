@@ -1,18 +1,20 @@
 import { BsLinkedin } from 'react-icons/bs';
 import { FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import { socialsAnimation } from '../../animation/animation';
 
 const HeaderSocials = () => {
   console.log();
 
   return (
-    <div className="header__socials">
-      <a href="https://linkedin.com" target="_blank" rel="noreferrer">
+    <motion.div className="header__socials" initial="initial" animate="animate">
+      <motion.a variants={socialsAnimation} custom={1} href="https://linkedin.com" target="_blank" rel="noreferrer">
         <BsLinkedin />
-      </a>
-      <a href="https://github.com" target="_blank" rel="noreferrer">
+      </motion.a>
+      <motion.a variants={socialsAnimation} custom={2} href="https://github.com" target="_blank" rel="noreferrer">
         <FaGithub />
-      </a>
-    </div>
+      </motion.a>
+    </motion.div>
   );
 };
 

@@ -26,11 +26,16 @@ h1, h2, h3, h4, h5 {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 28px;
 }
 
 section {
   padding-top: 8rem;
+  overflow: hidden;
 }
 
 section > h2, section > h5 {

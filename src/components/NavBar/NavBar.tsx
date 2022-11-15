@@ -11,22 +11,27 @@ const NavBar = () => {
     {
       link: '#',
       image: <AiOutlineHome />,
+      text: 'Home',
     },
     {
       link: '#about',
       image: <AiOutlineUser />,
+      text: 'About',
     },
     {
       link: '#experience',
       image: <BiBook />,
+      text: 'Experience',
     },
     {
       link: '#portfolio',
       image: <RiServiceLine />,
+      text: 'Portfolio',
     },
     {
       link: '#contact',
       image: <BiMessageSquareDetail />,
+      text: 'Contact',
     },
   ];
 
@@ -34,18 +39,22 @@ const NavBar = () => {
     <nav className="nav">
       <ul className="nav__list">
         {
-          links.map(({ link, image }) => (
-            <li className="nav__item" key={Math.random()}>
+          links.map(({ link, image, text }) => (
+            <li className={activeLink === link ? 'nav__item active' : 'nav__item'} key={Math.random()}>
               <a
                 onClick={() => setActiveLink(link)}
                 className={activeLink === link ? 'nav__link active' : 'nav__link'}
                 href={link}
               >
-                {image}
+                <span className="nav__icon">
+                  {image}
+                </span>
+                <span className="nav__text">{text}</span>
               </a>
             </li>
           ))
         }
+        <div className="indicator" />
       </ul>
     </nav>
   );

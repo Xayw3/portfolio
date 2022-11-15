@@ -2,7 +2,7 @@ import formImage from '../../assets/images/form.jpg';
 import jokeApp from '../../assets/images/joke-app.jpg';
 import movieland from '../../assets/images/movieland.jpg';
 
-export const portfolioReact = [
+const portfolioReact = [
   {
     id: 1,
     image: formImage,

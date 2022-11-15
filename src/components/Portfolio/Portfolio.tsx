@@ -1,32 +1,38 @@
 import './portfolio.scss';
+import { motion } from 'framer-motion';
 import portfolioReact from './portfolioData';
+import { projectAnimation, titleAnimation } from '../../animation/animation';
 
 const Portfolio = () => {
   const data = portfolioReact;
 
   return (
-    <section id="portfolio">
-      <h5>My Recent Work</h5>
-      <h2>Portfolio</h2>
+    <motion.section id="portfolio" initial="hidden" whileInView="visible" viewport={{ amount: 0.3, once: true }}>
+      <motion.h5 variants={titleAnimation}>My Recent Work</motion.h5>
+      <motion.h2 variants={titleAnimation}>Portfolio</motion.h2>
       <div className="container portfolio__container">
         {
           data.map(({
             image, title, githubLink, appLink, id,
           }) => (
-            <article key={id} className="portfolio__item">
+            <motion.article key={id} className="portfolio__item" variants={projectAnimation}>
               <div className="portfolio__item-image">
                 <img src={image} alt="f" />
               </div>
               <h3>{title}</h3>
               <div className="portfolio__btns">
-                <a className="btn" href={githubLink} target="_blank" rel="noreferrer">Github</a>
-                <a className="btn btn-primary" target="_blank" href={appLink} rel="noreferrer">Live App</a>
+                <div className="portfolio__btn">
+                  <a href={githubLink} target="_blank" rel="noreferrer">Github</a>
+                </div>
+                <div className="portfolio__btn">
+                  <a target="_blank" href={appLink} rel="noreferrer">Live App</a>
+                </div>
               </div>
-            </article>
+            </motion.article>
           ))
         }
       </div>
-    </section>
+    </motion.section>
   );
 };
 
