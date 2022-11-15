@@ -7,7 +7,7 @@ const App = () => {
 
   useEffect(() => {
     setLoading(false);
-  }, [loading]);
+  }, []);
 
   return (
     <>
