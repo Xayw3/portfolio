@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.scss';
 import LandingPage from './components/LandingPage/LandingPage';
+import Loader from './components/Loader/Loader';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -16,7 +17,7 @@ const App = () => {
   return (
     <>
       {
-        loading ? <p>loading...</p> : <LandingPage />
+        loading ? <Loader /> : <LandingPage />
       }
     </>
   );

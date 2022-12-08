@@ -3,6 +3,8 @@
 .portfolio__container {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .portfolio__item {
@@ -11,6 +13,7 @@
   border-radius: 2rem;
   border: 1px solid $primary-color-variant;
   transition: $transition;
+  width: 30%;
 
   & h3 {
     margin: 1.2rem 0 2rem;

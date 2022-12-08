@@ -1,6 +1,7 @@
 import formImage from '../../assets/images/form.jpg';
 import jokeApp from '../../assets/images/joke-app.jpg';
 import movieland from '../../assets/images/movieland.jpg';
+import findtrend from '../../assets/images/findtrend.jpg';
 
 const portfolioReact = [
   {
@@ -23,6 +24,13 @@ const portfolioReact = [
     title: 'MovieLand',
     githubLink: 'https://github.com/Xayw3/movieland',
     appLink: 'https://movieland-neon.vercel.app/',
+  },
+  {
+    id: 3,
+    image: findtrend,
+    title: 'Findtrend',
+    githubLink: 'https://github.com/Xayw3/findtrend',
+    appLink: 'https://findtrend-three.vercel.app/',
   },
 ];
 
