@@ -6,13 +6,21 @@ import Loader from './components/Loader/Loader';
 const App = () => {
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   if (document.readyState === 'loading') {
+  //     setLoading(true);
+  //   } else {
+  //     setLoading(false);
+  //   }
+  // }, []);
+
   useEffect(() => {
-    if (document.readyState === 'loading') {
-      setLoading(true);
-    } else {
-      setLoading(false);
+    if (loading) {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
-  }, []);
+  });
 
   return (
     <>
