@@ -38,7 +38,7 @@ export const letterAnimation: {} = {
     opacity: 1,
     transition: {
       duration: 1,
-      delay: custom * 0.05,
+      delay: custom * 0.03,
     },
   }),
 };

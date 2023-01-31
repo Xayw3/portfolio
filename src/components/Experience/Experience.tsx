@@ -12,7 +12,7 @@ const Experience = () => {
   const otherSkills = ['WordPress', 'Clean Code', 'PHP', 'Node JS', 'Git'];
 
   return (
-    <motion.section id="experience" initial="hidden" whileInView="visible" viewport={{ amount: 0.3, once: true }}>
+    <motion.section id="experience" initial="hidden" whileInView="visible" viewport={{ amount: 1.0, once: true }}>
       <motion.h5 variants={titleAnimation}>What Skills I Have</motion.h5>
       <motion.h2 variants={titleAnimation}>My Experience</motion.h2>
       <div className="container experience__container">

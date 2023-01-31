@@ -28,7 +28,7 @@ const Contact = () => {
   ];
 
   return (
-    <motion.section id="contact" initial="hidden" whileInView="visible" viewport={{ amount: 0.3, once: true }}>
+    <motion.section id="contact" initial="hidden" whileInView="visible" viewport={{ amount: 1.0, once: true }}>
       <motion.h5 variants={titleAnimation}>Get In Touch</motion.h5>
       <motion.h2 variants={titleAnimation}>Contact Me</motion.h2>
       <div className="container contact__container">

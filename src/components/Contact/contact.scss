@@ -43,14 +43,6 @@
   gap: 1.2rem;
 }
 
-// .contact__label {
-//   margin-bottom: 10px;
-
-//   &.error {
-//     color: #fa1616;
-//   }
-// }
-
 .contact__wrapper {
   position: relative;
   width: 100%;
@@ -96,6 +88,14 @@
     transition: background-color 9999s ease-in-out 0s;
     -webkit-text-fill-color: $white!important;
   }
+
+  &.error {
+    border-color: #fa1616;
+
+    &:focus {
+      outline: 1px solid #fa1616;
+    }
+  }
 }
 
 .contact__label {
@@ -106,32 +106,6 @@
   font-size: 1em;
   transition: $transition;
 }
-
-
-// .contact__input {
-//   font-family: 'Poppins', sans-serif;
-//   width: 100%;
-//   padding: 1.5rem;
-//   border-radius: .5rem;
-//   background-color: transparent;
-//   border: 2px solid $primary-color-variant;
-//   resize: none;
-//   color: $white;
-
-//   &::placeholder {
-//     font-family: 'Poppins', sans-serif;
-//   }
-
-//   &:focus {
-//     outline: 2px solid $primary-color;
-//     border-color: transparent;
-//   }
-
-//   &:-webkit-autofill {
-//     transition: background-color 9999s ease-in-out 0s;
-//     -webkit-text-fill-color: $white!important;
-//   }
-// }
 
 // Responsive
 

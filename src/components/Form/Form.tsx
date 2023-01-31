@@ -30,11 +30,14 @@ const Form = () => {
   });
 
   return (
-    <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.3, once: true }}>
+    <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 1.0, once: true }}>
       <motion.form className="contact__form" onSubmit={formik.handleSubmit} variants={formAnimation}>
         <div className="contact__wrapper">
           <input
-            className={formik.values.name.length > 0 ? 'contact__input active' : 'contact__input'}
+            className={`
+              ${formik.values.name.length > 0 ? 'contact__input active' : 'contact__input'} 
+              ${formik.touched.name && formik.errors.name ? 'error' : 'correct'}
+            `}
             id="name"
             value={formik.values.name}
             onChange={formik.handleChange}
@@ -43,13 +46,19 @@ const Form = () => {
             name="name"
             required
           />
-          <span className={formik.touched.name && formik.errors.name ? 'contact__label error' : 'contact__label'}>
+          <span
+            style={{ borderColor: `${formik.touched.name && formik.errors.name ? '#fa1616' : '#00dfc4'}` }}
+            className={formik.touched.name && formik.errors.name ? 'contact__label error' : 'contact__label'}
+          >
             {formik.touched.name && formik.errors.name ? formik.errors.name : 'Your Full Name'}
           </span>
         </div>
         <div className="contact__wrapper">
           <input
-            className={formik.values.email.length > 0 ? 'contact__input active' : 'contact__input'}
+            className={`
+              ${formik.values.email.length > 0 ? 'contact__input active' : 'contact__input'} 
+              ${formik.touched.email && formik.errors.email ? 'error' : 'correct'}
+            `}
             id="email"
             value={formik.values.email}
             onChange={formik.handleChange}
@@ -58,13 +67,19 @@ const Form = () => {
             name="email"
             required
           />
-          <span className={formik.touched.email && formik.errors.email ? 'contact__label error' : 'contact__label'}>
+          <span
+            style={{ borderColor: `${formik.touched.email && formik.errors.email ? '#fa1616' : '#00dfc4'}` }}
+            className={formik.touched.email && formik.errors.email ? 'contact__label error' : 'contact__label'}
+          >
             {formik.touched.email && formik.errors.email ? formik.errors.email : 'Your Email'}
           </span>
         </div>
         <div className="contact__wrapper">
           <textarea
-            className={formik.values.message.length > 0 ? 'contact__input active' : 'contact__input'}
+            className={`
+              ${formik.values.message.length > 0 ? 'contact__input active' : 'contact__input'} 
+              ${formik.touched.message && formik.errors.message ? 'error' : 'correct'}
+            `}
             id="message"
             value={formik.values.message}
             onChange={formik.handleChange}
@@ -73,7 +88,10 @@ const Form = () => {
             name="message"
             required
           />
-          <span className={formik.touched.message && formik.errors.message ? 'contact__label error' : 'contact__label'}>
+          <span
+            style={{ borderColor: `${formik.touched.message && formik.errors.message ? '#fa1616' : '#00dfc4'}` }}
+            className={formik.touched.message && formik.errors.message ? 'contact__label error' : 'contact__label'}
+          >
             {formik.touched.message && formik.errors.message ? formik.errors.message : 'Your Message'}
           </span>
         </div>

@@ -30,7 +30,7 @@ const About = () => {
       className="about"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 1.0 }}
       id="about"
     >
       <motion.h5 variants={titleAnimation}>Get To Know</motion.h5>
