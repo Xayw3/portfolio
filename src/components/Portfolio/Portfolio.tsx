@@ -7,7 +7,7 @@ const Portfolio = () => {
   const data = portfolioReact;
 
   return (
-    <motion.section id="portfolio" initial="hidden" whileInView="visible" viewport={{ amount: 0.6, once: true }}>
+    <motion.section id="portfolio" initial="hidden" whileInView="visible" viewport={{ amount: 0.4, once: true }}>
       <motion.h5 variants={titleAnimation}>My Recent Work</motion.h5>
       <motion.h2 variants={titleAnimation}>Portfolio</motion.h2>
       <div className="container portfolio__container">

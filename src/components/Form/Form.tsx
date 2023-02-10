@@ -30,7 +30,7 @@ const Form = () => {
   });
 
   return (
-    <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 1.0, once: true }}>
+    <motion.div initial="hidden" whileInView="visible" viewport={{ amount: 0.7, once: true }}>
       <motion.form className="contact__form" onSubmit={formik.handleSubmit} variants={formAnimation}>
         <div className="contact__wrapper">
           <input
