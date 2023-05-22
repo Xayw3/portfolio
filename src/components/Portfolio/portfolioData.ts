@@ -2,8 +2,24 @@ import formImage from '../../assets/images/form.jpg';
 import jokeApp from '../../assets/images/joke-app.jpg';
 import movieland from '../../assets/images/movieland.jpg';
 import findtrend from '../../assets/images/findtrend.jpg';
+import moviefinder from '../../assets/images/moviefinder.jpg';
+import player from '../../assets/images/player.jpg';
 
 const portfolioReact = [
+  {
+    id: 4,
+    image: moviefinder,
+    title: 'MovieFinder',
+    githubLink: 'https://github.com/Xayw3/MovieFinder',
+    appLink: 'https://movie-finder-flame.vercel.app/',
+  },
+  {
+    id: 5,
+    image: player,
+    title: 'Player',
+    githubLink: 'https://github.com/Xayw3/player',
+    appLink: 'https://player-xayw3.vercel.app/',
+  },
   {
     id: 1,
     image: formImage,
